@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  backend:
+    build: .
+    command: uvicorn src.main:app --host 0.0.0.0 --port 8000
+    ports:
+      - "8000:8000"
+    environment:
+      - NVIDIA_API_KEY=vapi-0q0-LOMMeOWWMo5HvnVo-WG8NO5S6xEGR7-c_3nEHoAEVfHVFjz5is6CMHaRD94u
+    volumes:
+      - chroma_data:/app/chroma_db
+
+  frontend:
+    build: .
+    command: streamlit run app.py --server.port 8501 --server.address 0.0.0.0
+    ports:
+      - "8501:8501"
+    environment:
+      - BACKEND_URL=http://backend:8000
+    depends_on:
+      - backend
+
+volumes:
+  chroma_data:
