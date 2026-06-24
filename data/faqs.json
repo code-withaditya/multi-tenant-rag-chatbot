@@ -1,0 +1,20 @@
+[
+  {
+    "id": "faq_001",
+    "category": "Refunds",
+    "question": "What is the refund window for international transactions?",
+    "answer": "International cross-border transactions can be refunded within 14 business days. However, a 2.5% currency conversion processing fee is non-refundable."
+  },
+  {
+    "id": "faq_002",
+    "category": "Security",
+    "question": "How do I reset my multi-factor authentication (MFA)?",
+    "answer": "To reset your MFA, navigate to Settings > Security > Two-Factor Authentication. If you are locked out, contact compliance-ops@fintech.com with your Employee ID."
+  },
+  {
+    "id": "faq_003",
+    "category": "Security",
+    "question": "How do I reset my account password?",
+    "answer": "To reset your account password, click 'Forgot Password' on the login page, enter your corporate email, and follow the secure verification link sent to your inbox."
+  }
+]

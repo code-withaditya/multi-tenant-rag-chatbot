@@ -1,0 +1,19 @@
+# Credentials and Environment Variables
+.env
+*.env
+
+# Python caching
+__pycache__/
+*.pyc
+
+# Virtual Environments
+venv/
+.venv/
+
+# Local Vector Database (Do not upload your users' sandboxes!)
+chroma_db/
+*.db
+
+# OS specific files
+.DS_Store
+Thumbs.db
