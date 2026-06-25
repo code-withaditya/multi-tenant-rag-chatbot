@@ -1,4 +1,5 @@
 # 🤖 FAQ Genius: Multi-Tenant FAQ RAG Chatbot
+[![Hugging Face Spaces](https://img.shields.shields.shields.shields.shields.shields/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/itsadityacodes/faq-genius)
 
 A high-performance, production-ready Retrieval-Augmented Generation (RAG) chatbot engine. This full-stack application utilizes **FastAPI** for a modular backend, **Streamlit** for an interactive user interface, and **ChromaDB** for efficient vector storage. The architecture seamlessly taps into **NVIDIA NIM microservices** for fast embeddings and inference by utilizing an OpenAI client compliance layer.
 
