@@ -4,7 +4,7 @@ import uuid
 import json
 
 # 🌐 BACKEND CONFIGURATION
-BACKEND_URL = "http://backend:8000"
+BACKEND_URL = "http://localhost:8000"  # Update this to your FastAPI backend URL if different
 
 st.set_page_config(
     page_title="Enterprise Multi-Tenant FAQ Bot",
@@ -14,7 +14,7 @@ st.set_page_config(
 
 # 🔑 SESSION STATE INITIALIZATION
 if "session_id" not in st.session_state:
-    # Generate a unique session token for this browser tab instance
+    # Generate a unique session token for this browser tab
     st.session_state.session_id = str(uuid.uuid4())
 
 if "messages" not in st.session_state:

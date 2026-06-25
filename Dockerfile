@@ -14,6 +14,14 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the rest of your application code
 COPY . .
 
-# Expose ports for FastAPI (8000) and Streamlit (8501)
-EXPOSE 8000
-EXPOSE 8501
+# Force the frontend to look at the local backend inside the same container
+ENV BACKEND_URL=http://127.0.0.1:8000
+
+# Give Windows permission to execute our startup script
+RUN chmod +x start.sh
+
+# Expose the precise port that Hugging Face expects
+EXPOSE 7860
+
+# Run our orchestration script to boot both apps together
+CMD ["./start.sh"]
