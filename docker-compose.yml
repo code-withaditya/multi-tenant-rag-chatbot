@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   backend:
     build: .
@@ -7,13 +5,21 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - NVIDIA_API_KEY=vapi-0q0-LOMMeOWWMo5HvnVo-WG8NO5S6xEGR7-c_3nEHoAEVfHVFjz5is6CMHaRD94u
+      # Variables for your database.py layer
+      - NVIDIA_API_KEY=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
+      - NVIDIA_BASE_URL=https://integrate.api.nvidia.com/v1
+      - EMBEDDING_MODEL=nvidia/llama-nemotron-embed-1b-v2
+
+      # Variables for your main.py chat layer
+      - OPENAI_API_KEY=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
+      - OPENAI_BASE_URL=https://integrate.api.nvidia.com/v1
+      - LLM_MODEL=openai/gpt-oss-20b
     volumes:
       - chroma_data:/app/chroma_db
 
   frontend:
     build: .
-    command: streamlit run app.py --server.port 8501 --server.address 0.0.0.0
+    command: streamlit run frontend.py --server.port 8501 --server.address 0.0.0.0
     ports:
       - "8501:8501"
     environment:
